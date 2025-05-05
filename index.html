@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furry Den Appeal Center</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --furry-primary: #FF69B4;
+            --furry-secondary: #8A2BE2; 
+            --furry-dark: #2C1A4A;
+            --furry-light: #F8F8FF;
+            --furry-accent: #FF1493;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, var(--furry-dark), #4B0082);
+            color: var(--furry-light);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            background-color: rgba(44, 26, 74, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 600px;
+            padding: 30px;
+            border: 1px solid var(--furry-primary);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            font-family: 'Mochiy Pop One', sans-serif;
+        }
+        
+        h1 {
+            color: var(--furry-primary);
+            margin: 0;
+            font-size: 28px;
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+        }
+        
+        .subtitle {
+            color: #B9BBBE;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        
+        .paw-divider {
+            text-align: center;
+            color: var(--furry-primary);
+            margin: 20px 0;
+            font-size: 18px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: var(--furry-light);
+        }
+        
+        select, textarea, input[type="text"] {
+            width: 100%;
+            padding: 14px;
+            border-radius: 8px;
+            border: 1px solid #3E2A5E;
+            background-color: rgba(46, 34, 80, 0.5);
+            color: var(--furry-light);
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: all 0.3s;
+        }
+        
+        select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FF69B4'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 20px;
+        }
+        
+        select:focus, textarea:focus, input[type="text"]:focus {
+            outline: none;
+            border-color: var(--furry-primary);
+            box-shadow: 0 0 0 2px rgba(255, 105, 180, 0.3);
+        }
+        
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .checkbox-group {
+            margin: 25px 0;
+            padding: 20px;
+            background-color: rgba(46, 34, 80, 0.5);
+            border-radius: 8px;
+            border: 1px solid #3E2A5E;
+            transition: all 0.3s ease;
+        }
+        
+        .checkbox-group:hover {
+            box-shadow: 0 0 10px rgba(255, 105, 180, 0.2);
+        }
+        
+        .checkbox-group h3 {
+            color: var(--furry-primary);
+            margin-top: 0;
+            font-family: 'Mochiy Pop One', sans-serif;
+        }
+        
+        .checkbox-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .checkbox-item input {
+            margin-right: 12px;
+            margin-top: 5px;
+            accent-color: var(--furry-primary);
+        }
+        
+        .checkbox-item label {
+            font-weight: 400;
+            margin-bottom: 0;
+            flex: 1;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(to right, var(--furry-primary), var(--furry-accent));
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 18px;
+            width: 100%;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(255, 20, 147, 0.3);
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 20, 147, 0.4);
+        }
+        
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+        
+        .discord-btn {
+            display: block;
+            text-align: center;
+            background-color: transparent;
+            color: var(--furry-light);
+            border: 2px solid var(--furry-primary);
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 25px;
+            transition: all 0.3s;
+        }
+        
+        .discord-btn:hover {
+            background-color: var(--furry-primary);
+            color: white;
+        }
+        
+        .status-message {
+            text-align: center;
+            margin-top: 25px;
+            padding: 15px;
+            border-radius: 8px;
+            display: none;
+            font-weight: 700;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        .success {
+            background-color: rgba(46, 213, 115, 0.2);
+            color: #2ED573;
+            border: 1px solid #2ED573;
+        }
+        
+        .error {
+            background-color: rgba(237, 66, 69, 0.2);
+            color: #ED4245;
+            border: 1px solid #ED4245;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🦊 Furry Den Appeals 🐾</h1>
+            <p class="subtitle">Submit your ban/mute/warning appeal</p>
+        </div>
+        
+        <div class="paw-divider">🐾 ⋆ 🐾 ⋆ 🐾</div>
+        
+        <form id="appealForm">
+            <div class="form-group">
+    <label for="discordTag">Your Discord Username</label>
+    <input type="text" id="discordTag" name="discordTag" placeholder="YourDiscordUsername" required>
+</div>
+            
+            <div class="form-group">
+                <label for="punishmentType">Type of Punishment</label>
+                <select id="punishmentType" name="punishmentType" required>
+                    <option value="" disabled selected>Select punishment type</option>
+                    <option value="warning">Warning ⚠️</option>
+                    <option value="mute">Mute 🔇</option>
+                    <option value="ban">Ban 🔨</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="reason">Appeal Reason (English only)</label>
+                <textarea id="reason" name="reason" placeholder="Please explain why you believe this punishment should be removed..." required></textarea>
+            </div>
+            
+            <div class="checkbox-group">
+                <h3>Appeal Agreement</h3>
+                <p style="color: #B9BBBE; font-size: 14px; margin-bottom: 15px;">By checking these boxes, you agree to:</p>
+                
+                <div class="checkbox-item">
+                    <input type="checkbox" id="agree1" name="agree1" required>
+                    <label for="agree1">I understand why I was punished</label>
+                </div>
+                
+                <div class="checkbox-item">
+                    <input type="checkbox" id="agree2" name="agree2" required>
+                    <label for="agree2">I will not repeat the behavior that led to this punishment</label>
+                </div>
+                
+                <div class="checkbox-item">
+                    <input type="checkbox" id="agree3" name="agree3" required>
+                    <label for="agree3">I agree to follow all server rules in the future</label>
+                </div>
+                
+                <div class="checkbox-item">
+                    <input type="checkbox" id="agree4" name="agree4" required>
+                    <label for="agree4">I understand false appeals may result in additional punishment</label>
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-btn">Submit Appeal ✨</button>
+            
+            <div id="statusMessage" class="status-message"></div>
+        </form>
+        
+        <a href="https://discord.gg/6hXU2cExxp" class="discord-btn" target="_blank">Join Our Discord 🦊</a>
+    </div>
+
+    <script>
+    document.getElementById('appealForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const discordTag = document.getElementById('discordTag').value;
+        const punishmentType = document.getElementById('punishmentType').value;
+        const reason = document.getElementById('reason').value;
+        
+        // Validate Discord username
+        if (!discordTag || discordTag.trim() === "") {
+            alert("Please enter your Discord username");
+            return;
+        }
+
+        // Webhook URL
+        const WEBHOOK_URL = "https://discord.com/api/webhooks/1368624914851954781/FxGbzXfs1iOLYLQaWf9olqNnL7ROAQQtAamdCbCrWMJNzJYNKIdd_IT3caVmuEsGbv8C";
+        
+        // Enhanced message with better formatting
+        const message = {
+            content: `📢 **<@&1369028312000757923> ━━━ NEW APPEAL SUBMITTED ━━━**`,
+            embeds: [{
+                color: 0xFF69B4,
+                title: "✨ Furry Den Appeal Center ✨",
+                description: "🌟 **New appeal requires staff attention!** 🌟",
+                fields: [
+                    {
+                        name: "🔹 **User**",
+                        value: `\`\`\`\n${discordTag}\n\`\`\``,
+                        inline: true
+                    },
+                    {
+                        name: "🔹 **Type**",
+                        value: `\`\`\`\n${punishmentType.charAt(0).toUpperCase() + punishmentType.slice(1)}\n\`\`\``,
+                        inline: true
+                    },
+                    {
+                        name: "📜 **Reason**",
+                        value: `\`\`\`\n${reason || "No reason provided"}\n\`\`\``
+                    },
+                    {
+                        name: "🔔 **Requerid Actions**",
+                        value: "**Please review this appeal server hosts:**\n> <@1150553220247199826> \n> <@1227348403302961234> ",
+                        inline: false
+                    }
+                ],
+                timestamp: new Date().toISOString(),
+                footer: {
+                    text: "🦊 Furry Den Appeals System 🐾",
+                    icon_url: "https://i.imgur.com/pQZ8v9y.png"
+                },
+                thumbnail: {
+                    url: "https://d.furaffinity.net/art/thewarlordmda/1699949154/1699946085.thewarlordmda__boykisser__cop_crimes_meme.jpg"
+                },
+                author: {
+                    name: "Furry Den Moderation Team",
+                    icon_url: "https://i.imgur.com/J5qKZNi.png"
+                }
+            }],
+            allowed_mentions: {
+                roles: ['1369028312000757923'],
+                users: ['1150553220247199826', '1227348403302961234']
+            }
+        };
+
+        try {
+            const response = await fetch(WEBHOOK_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(message)
+            });
+
+            const statusMessage = document.getElementById('statusMessage');
+            if (response.ok) {
+                statusMessage.textContent = '✨ Appeal submitted successfully! Staff have been notified.';
+                statusMessage.className = 'status-message success';
+                document.getElementById('appealForm').reset();
+            } else {
+                throw new Error(`HTTP error ${response.status}`);
+            }
+            statusMessage.style.display = 'block';
+            
+        } catch (error) {
+            console.error("Error:", error);
+            const statusMessage = document.getElementById('statusMessage');
+            statusMessage.textContent = '❌ Error submitting appeal. Please contact @bebeloskk on Discord!';
+            statusMessage.className = 'status-message error';
+            statusMessage.style.display = 'block';
+        }
+    });
+</script>
+</body>
+</html>
